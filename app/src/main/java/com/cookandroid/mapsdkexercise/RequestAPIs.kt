@@ -86,10 +86,10 @@ class APIRequestHandler(private var routeList: ArrayList<TPointList>, private va
                             destinationFlag = true;
                         }
                     } catch(_:NullPointerException){
-                        Log.d(mainActivity.getString(R.string.TAG),"response is null")
+                        Log.d(mainActivity.getString(R.string.TAG),"RESPONSE'S PROPERTY IS NULL")
                     }
                 } else {
-                    Log.d(mainActivity.getString(R.string.TAG),"RESPONSE FAIELD")
+                    Log.d(mainActivity.getString(R.string.TAG),"RESPONSE FAILED")
                 }
             }
             override fun onFailure(call: Call<Geocoding>, t: Throwable) {
@@ -120,10 +120,10 @@ class APIRequestHandler(private var routeList: ArrayList<TPointList>, private va
                         parsingRouteResponse(response)
                         mainActivity.drawOnMap()
                     } catch(_:NullPointerException){
-                        Log.d(mainActivity.getString(R.string.TAG).toString(),"Exception")
+                        Log.d(mainActivity.getString(R.string.TAG).toString(),"RESPONSE'S PROPERTY IS NULL")
                     }
                 } else {
-                    Log.d(mainActivity.getString(R.string.TAG).toString(),"RESPONSE FAIELD")
+                    Log.d(mainActivity.getString(R.string.TAG).toString(),"RESPONSE FAILED")
                 }
             }
             override fun onFailure(call: Call<Route>, t: Throwable) {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="BASE_URL">https://apis.openapi.sk.com/</string>
+    <string name="TAG">USER_TAG</string>
+    <string name="DEPART">DP</string>
+    <string name="DESTINATION">DT</string>
+</resources>

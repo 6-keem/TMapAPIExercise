@@ -2,7 +2,6 @@ package com.cookandroid.mapsdkexercise
 
 import android.net.Uri
 import android.util.Log
-import androidx.core.content.ContextCompat
 import com.cookandroid.mapsdkexercise.Geocoding.Geocoding
 import com.cookandroid.mapsdkexercise.Geocoding.GeocodingService
 import com.cookandroid.mapsdkexercise.RouteFind.FindRoutesService

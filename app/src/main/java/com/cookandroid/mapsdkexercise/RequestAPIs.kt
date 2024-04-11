@@ -35,8 +35,8 @@ class APIRequestHandler(private var routeList: ArrayList<TPointList>, private va
     private val API_KEY = BuildConfig.api_key
     private var departPoint : TMapPoint = TMapPoint(0.0,0.0)
     private var destinationPoint : TMapPoint = TMapPoint(0.0,0.0)
-    private var departFlag = false;
-    private var destinationFlag = false;
+    private var departFlag = false
+    private var destinationFlag = false
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(mainActivity.getString(R.string.BASE_URL))
@@ -53,9 +53,9 @@ class APIRequestHandler(private var routeList: ArrayList<TPointList>, private va
                 if(departFlag && destinationFlag){
                     Log.d(R.string.TAG.toString(),"depart = {${departPoint.latitude}, ${departPoint.longitude}, dest = {${destinationPoint.latitude}, ${destinationPoint.longitude}}")
                     requestTransmitRouteAPI()
-                    departFlag = false;
-                    destinationFlag = false;
-                    break;
+                    departFlag = false
+                    destinationFlag = false
+                    break
                 }
             }
         }
@@ -79,11 +79,11 @@ class APIRequestHandler(private var routeList: ArrayList<TPointList>, private va
                         if (value == mainActivity.getString(R.string.DEPART)) {
                             departPoint.latitude = lat.toDouble()
                             departPoint.longitude = lon.toDouble()
-                            departFlag = true;
+                            departFlag = true
                         } else if (value == mainActivity.getString(R.string.DESTINATION)) {
                             destinationPoint.latitude = lat.toDouble()
                             destinationPoint.longitude = lon.toDouble()
-                            destinationFlag = true;
+                            destinationFlag = true
                         }
                     } catch(_:NullPointerException){
                         Log.d(mainActivity.getString(R.string.TAG),"RESPONSE'S PROPERTY IS NULL")
@@ -120,14 +120,14 @@ class APIRequestHandler(private var routeList: ArrayList<TPointList>, private va
                         parsingRouteResponse(response)
                         mainActivity.drawOnMap()
                     } catch(_:NullPointerException){
-                        Log.d(mainActivity.getString(R.string.TAG).toString(),"RESPONSE'S PROPERTY IS NULL")
+                        Log.d(mainActivity.getString(R.string.TAG),"RESPONSE'S PROPERTY IS NULL")
                     }
                 } else {
-                    Log.d(mainActivity.getString(R.string.TAG).toString(),"RESPONSE FAILED")
+                    Log.d(mainActivity.getString(R.string.TAG),"RESPONSE FAILED")
                 }
             }
             override fun onFailure(call: Call<Route>, t: Throwable) {
-                Log.d(mainActivity.getString(R.string.TAG).toString(), "FAILED : " + t.message)
+                Log.d(mainActivity.getString(R.string.TAG), "FAILED : " + t.message)
             }
         })
     }
